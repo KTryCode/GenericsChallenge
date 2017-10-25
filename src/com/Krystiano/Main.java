@@ -1,5 +1,7 @@
 package com.Krystiano;
 
+import java.util.Collections;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,11 +13,31 @@ public class Main {
 	    SwimmingTeam W = new SwimmingTeam("W", 3);
 	    SwimmingTeam E = new SwimmingTeam("E", 10);
 
-	    VolleyBall Z = new VolleyBall("Z", -1);
+	    VolleyBall Z = new VolleyBall("Z", -11);
 	    VolleyBall X = new VolleyBall("X", 0);
-	    VolleyBall V = new VolleyBall("C", 10);
+	    VolleyBall V = new VolleyBall("V", 10);
 
         League<VolleyBall> volleyLeague = new League<>("V_League");
-        volleyLeague.addTeam(Z);
-    }
+		League<SoccerTeam> soccerLeague = new League<>("S_League");
+		League<VolleyBall> swimming = new League<>("SW_League");
+
+		//adding teams to proper leagues
+		volleyLeague.addTeam(Z);
+		volleyLeague.addTeam(X);
+		volleyLeague.addTeam(V);
+
+
+		volleyLeague.printRanking();
+		Collections.sort(volleyLeague.getRanking());
+		System.out.println("\n");
+		volleyLeague.printRanking();
+
+		soccerLeague.addTeam(A);
+		soccerLeague.addTeam(B);
+		soccerLeague.addTeam(C);
+		soccerLeague.printRanking();
+		Collections.sort(soccerLeague.getRanking());
+		soccerLeague.printRanking();
+
+	}
 }
