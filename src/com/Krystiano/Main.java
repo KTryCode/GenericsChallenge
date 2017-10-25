@@ -13,8 +13,9 @@ public class Main {
 
 	    VolleyBall Z = new VolleyBall("Z", -1);
 	    VolleyBall X = new VolleyBall("X", 0);
-	    VolleyBall C = new VolleyBall("C", 10);
+	    VolleyBall V = new VolleyBall("C", 10);
 
-	    
+        League<VolleyBall> volleyLeague = new League<>("V_League");
+        volleyLeague.addTeam(Z);
     }
 }
